@@ -1,0 +1,46 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"sangwon-blog\"\n",
+        "listing:\n",
+        "  contents: posts\n",
+        "  sort: \"date desc\"\n",
+        "  type: default\n",
+        "  categories: true\n",
+        "  sort-ui: false\n",
+        "  filter-ui: false\n",
+        "page-layout: full\n",
+        "title-block-banner: true\n",
+        "---"
+      ],
+      "id": "bfa46df3"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "a = np.arange(10)\n",
+        "a"
+      ],
+      "id": "ad7e4f8c",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\LS\\AppData\\Roaming\\Python\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
