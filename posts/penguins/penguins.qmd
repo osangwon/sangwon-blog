@@ -1,0 +1,190 @@
+---
+title: "팔머펭귄 데이터 분석"
+format: html
+jupyter: python3
+---
+
+## 7조: 오상원, 오윤지, 양현준
+
+## 팔머펭귄 데이터 불러오기
+
+```{python}
+import pandas as pd
+from palmerpenguins import load_penguins
+penguins = load_penguins()
+```
+
+## 팔머펭귄 종
+
+```{python}
+set(penguins['species'])
+```
+
+## 팔머펭귄 데이터 종류
+
+```{python}
+penguins.keys()
+```
+
+
+## 1. Adelie
+
+### Adelie의 서식지
+
+```{python}
+Adelie = penguins[penguins['species'] == 'Adelie']
+
+set(Adelie['island'])
+```
+
+### Adelie의 성별, 서식지별 분류
+
+### Biscoe_male
+```{python}
+Biscoe_male = Adelie[(Adelie['island'] == 'Biscoe') & (Adelie['sex'] == 'male')]
+Biscoe_male.describe()
+```
+
+### Biscoe_female
+```{python}
+Biscoe_female = Adelie[(Adelie['island'] == 'Biscoe') & (Adelie['sex'] == 'female')]
+Biscoe_female.describe()
+```
+
+### Dream_male
+```{python}
+Dream_male = Adelie[(Adelie['island'] == 'Dream') & (Adelie['sex'] == 'male')]
+Dream_male.describe()
+```
+
+### Dream_female
+```{python}
+Dream_female = Adelie[(Adelie['island'] == 'Dream') & (Adelie['sex'] == 'female')]
+Dream_female.describe()
+```
+
+### Torgersen_male
+```{python}
+Torgersen_male = Adelie[(Adelie['island'] == 'Torgersen') & (Adelie['sex'] == 'male')]
+Torgersen_male.describe()
+```
+
+### Torgersen_female
+```{python}
+Torgersen_female = Adelie[(Adelie['island'] == 'Torgersen') & (Adelie['sex'] == 'female')]
+Torgersen_female.describe()
+```
+
+### 종류 별 최대값 개체 및 값
+| 데이터 종류 | 개체 | 값 |
+|--------|------|------|
+| bill_length |   biscoe_male   |   40.590909   |
+| bill_depth |   Torgersen_male   |   19.391304   |
+| flipper_length |   Torgersen_male   |   194.913043   |
+| body_mass |   biscoe_male   |   4050.000000   |
+
+
+## 2. Gentoo
+
+### Gentoo의 서식지
+
+```{python}
+Gentoo = penguins[penguins['species'] == 'Gentoo']
+
+set(Gentoo['island'])
+```
+
+### Gentoo의 성별, 서식지별 분류
+
+### Biscoe_male
+```{python}
+Gentoo_male = Gentoo[Gentoo['sex'] == 'male']
+Gentoo_male.describe()
+```
+
+### Biscoe_female
+```{python}
+Gentoo_female = Gentoo[Gentoo['sex'] == 'female']
+Gentoo_female.describe()
+```
+
+### 종류 별 최대값 개체 및 값
+| 데이터 종류 | 개체 | 값 |
+|--------|------|------|
+| bill_length |   male   |   49.473770   |
+| bill_depth |   male   |   15.718033   |
+| flipper_length |   male   |   221.540984   |
+| body_mass |   male   |   5484.836066   |
+
+
+## 3. Chinstrap
+
+### Chinstrap의 서식지
+
+```{python}
+Chinstrap = penguins[penguins['species'] == 'Chinstrap']
+
+set(Chinstrap['island'])
+```
+
+### Chinstrap의 성별, 서식지별 분류
+
+### Dream_male
+```{python}
+Chinstrap_male = Chinstrap[Chinstrap['sex'] == 'male']
+Chinstrap_male.describe()
+```
+
+### Dream_female
+```{python}
+Chinstrap_female = Chinstrap[Chinstrap['sex'] == 'female']
+Chinstrap_female.describe()
+```
+
+### 종류 별 최대값 개체 및 값
+| 데이터 종류 | 개체 | 값 |
+|--------|------|------|
+| bill_length |   male   |   51.094118   |
+| bill_depth |   male   |   19.252941   |
+| flipper_length |   male   |   199.911765   |
+| body_mass |   male   |   3938.970588   |
+
+## Adelie의 서식지별 최대 평균 비교
+```{python}
+comp = pd.DataFrame({
+    'bill_length' : ['biscoe', 'Torgersen', 'Dream'],
+    'bill_depth' : ['Torgersen', 'biscoe', 'Dream'],
+    'flipper_length' : ['Torgersen', 'Dream', 'biscoe'],
+    'body_mass' : ['biscoe', 'Dream', 'Torgersen'],
+    }, index = ['first', 'second', 'third'])
+
+comp
+```
+
+## 게체별 최대 평균 비교
+```{python}
+comp = pd.DataFrame({
+    'bill_length' : ['Chinstrap', 'Adelie', 'Gentoo'],
+    'bill_depth' : ['Adelie', 'Chinstrap', 'Gentoo'],
+    'flipper_length' : ['Chinstrap', 'Gentoo', 'Adelie'],
+    'body_mass' : ['Chinstrap', 'Adelie', 'Gentoo'],
+    }, index = ['first', 'second', 'third'])
+
+comp
+```
+
+## 결론
+### 서식지 분석
+Adelie는 Biscoe, Dream, Torgersen 3 종류의 섬에 서식하지만, Gentoo는 Biscoe, Chinstrap는 Dream 에서만 서식한다.
+
+### Adelie의 서식지별 분석
+1. 부리 길이는 **biscoe**이 가장 길고, **Dream**가 가장 짧다.
+2. 부리 깊이는 **Torgersen**이 가장 깊고, **Dream**가 가장 얕다.
+3. 날개 길이는 **Torgersen**이 가장 길고, **biscoe**가 가장 짧다.
+4. 무게는 **biscoe**이 가장 높고, **Torgersen**가 가장 낮다.
+
+### 개체별 데이터 분석
+1. 부리 길이는 **Chinstrap**이 가장 길고, **Gentoo**가 가장 짧다.
+2. 부리 깊이는 **Adelie**이 가장 깊고, **Gentoo**가 가장 얕다.
+3. 날개 길이는 **Chinstrap**이 가장 길고, **Adelie**가 가장 짧다.
+4. 무게는 **Chinstrap**이 가장 높고, **Gentoo**가 가장 낮다.
