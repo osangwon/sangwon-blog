@@ -2,6 +2,8 @@
 title: "팔머펭귄 데이터 분석"
 format: html
 jupyter: python3
+author: "SangWon Oh"
+date: "2025-03-06"
 ---
 
 ## 7조: 오상원, 오윤지, 양현준

@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "sangwon-blog",
     "section": "",
-    "text": "import numpy as np\n\na = np.arange(10)\na\n\narray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n팔머펭귄 데이터 분석\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nMar 6, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMar 3, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "import numpy as np\n\na = np.arange(10)\na\n\narray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n나의 첫 블로그 포스트\n\n\n\n\n\n\npython\n\n\npandas\n\n\nnumpy\n\n\n\n\n\n\n\n\n\nMar 7, 2025\n\n\nSangWon Oh\n\n\n\n\n\n\n\n\n\n\n\n\n팔머펭귄 데이터 분석\n\n\n\n\n\n\n\n\n\n\n\nMar 6, 2025\n\n\nSangWon Oh\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nMar 6, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMar 3, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -89,5 +89,82 @@
     "title": "팔머펭귄 데이터 분석",
     "section": "결론",
     "text": "결론\n\n서식지 분석\nAdelie는 Biscoe, Dream, Torgersen 3 종류의 섬에 서식하지만, Gentoo는 Biscoe, Chinstrap는 Dream 에서만 서식한다.\n\n\nAdelie의 서식지별 분석\n\n부리 길이는 biscoe이 가장 길고, Dream가 가장 짧다.\n부리 깊이는 Torgersen이 가장 깊고, Dream가 가장 얕다.\n날개 길이는 Torgersen이 가장 길고, biscoe가 가장 짧다.\n무게는 biscoe이 가장 높고, Torgersen가 가장 낮다.\n\n\n\n개체별 데이터 분석\n\n부리 길이는 Chinstrap이 가장 길고, Gentoo가 가장 짧다.\n부리 깊이는 Adelie이 가장 깊고, Gentoo가 가장 얕다.\n날개 길이는 Chinstrap이 가장 길고, Adelie가 가장 짧다.\n무게는 Chinstrap이 가장 높고, Gentoo가 가장 낮다."
+  },
+  {
+    "objectID": "posts/penguins/index.html#팔머펭귄-데이터-불러오기",
+    "href": "posts/penguins/index.html#팔머펭귄-데이터-불러오기",
+    "title": "팔머펭귄 데이터 분석",
+    "section": "팔머펭귄 데이터 불러오기",
+    "text": "팔머펭귄 데이터 불러오기\n\nimport pandas as pd\nfrom palmerpenguins import load_penguins\npenguins = load_penguins()"
+  },
+  {
+    "objectID": "posts/penguins/index.html#팔머펭귄-종",
+    "href": "posts/penguins/index.html#팔머펭귄-종",
+    "title": "팔머펭귄 데이터 분석",
+    "section": "팔머펭귄 종",
+    "text": "팔머펭귄 종\n\nset(penguins['species'])\n\n{'Adelie', 'Chinstrap', 'Gentoo'}"
+  },
+  {
+    "objectID": "posts/penguins/index.html#팔머펭귄-데이터-종류",
+    "href": "posts/penguins/index.html#팔머펭귄-데이터-종류",
+    "title": "팔머펭귄 데이터 분석",
+    "section": "팔머펭귄 데이터 종류",
+    "text": "팔머펭귄 데이터 종류\n\npenguins.keys()\n\nIndex(['species', 'island', 'bill_length_mm', 'bill_depth_mm',\n       'flipper_length_mm', 'body_mass_g', 'sex', 'year'],\n      dtype='object')"
+  },
+  {
+    "objectID": "posts/penguins/index.html#adelie",
+    "href": "posts/penguins/index.html#adelie",
+    "title": "팔머펭귄 데이터 분석",
+    "section": "1. Adelie",
+    "text": "1. Adelie\n\nAdelie의 서식지\n\nAdelie = penguins[penguins['species'] == 'Adelie']\n\nset(Adelie['island'])\n\n{'Biscoe', 'Dream', 'Torgersen'}\n\n\n\n\nAdelie의 성별, 서식지별 분류\n\n\nBiscoe_male\n\nBiscoe_male = Adelie[(Adelie['island'] == 'Biscoe') & (Adelie['sex'] == 'male')]\nBiscoe_male.describe()\n\n\n\n\n\n\n\n\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nyear\n\n\n\n\ncount\n22.000000\n22.000000\n22.000000\n22.000000\n22.000000\n\n\nmean\n40.590909\n19.036364\n190.409091\n4050.000000\n2008.136364\n\n\nstd\n2.006634\n0.879689\n6.463517\n355.567956\n0.774317\n\n\nmin\n37.600000\n17.200000\n180.000000\n3550.000000\n2007.000000\n\n\n25%\n39.025000\n18.600000\n185.750000\n3800.000000\n2008.000000\n\n\n50%\n40.800000\n18.900000\n191.000000\n4000.000000\n2008.000000\n\n\n75%\n41.550000\n19.500000\n194.750000\n4268.750000\n2009.000000\n\n\nmax\n45.600000\n21.100000\n203.000000\n4775.000000\n2009.000000\n\n\n\n\n\n\n\n\n\nBiscoe_female\n\nBiscoe_female = Adelie[(Adelie['island'] == 'Biscoe') & (Adelie['sex'] == 'female')]\nBiscoe_female.describe()\n\n\n\n\n\n\n\n\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nyear\n\n\n\n\ncount\n22.000000\n22.000000\n22.000000\n22.000000\n22.000000\n\n\nmean\n37.359091\n17.704545\n187.181818\n3369.318182\n2008.136364\n\n\nstd\n1.762212\n1.091298\n6.744567\n343.470715\n0.774317\n\n\nmin\n34.500000\n16.000000\n172.000000\n2850.000000\n2007.000000\n\n\n25%\n35.750000\n17.000000\n184.250000\n3150.000000\n2008.000000\n\n\n50%\n37.750000\n17.700000\n187.000000\n3375.000000\n2008.000000\n\n\n75%\n38.475000\n18.250000\n191.750000\n3693.750000\n2009.000000\n\n\nmax\n40.500000\n20.700000\n199.000000\n3900.000000\n2009.000000\n\n\n\n\n\n\n\n\n\nDream_male\n\nDream_male = Adelie[(Adelie['island'] == 'Dream') & (Adelie['sex'] == 'male')]\nDream_male.describe()\n\n\n\n\n\n\n\n\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nyear\n\n\n\n\ncount\n28.000000\n28.000000\n28.000000\n28.000000\n28.000000\n\n\nmean\n40.071429\n18.839286\n191.928571\n4045.535714\n2008.000000\n\n\nstd\n1.748196\n1.033276\n6.803749\n330.547636\n0.860663\n\n\nmin\n36.300000\n17.000000\n178.000000\n3425.000000\n2007.000000\n\n\n25%\n39.150000\n18.100000\n188.500000\n3875.000000\n2007.000000\n\n\n50%\n40.250000\n18.650000\n190.500000\n3987.500000\n2008.000000\n\n\n75%\n41.100000\n19.275000\n196.000000\n4300.000000\n2009.000000\n\n\nmax\n44.100000\n21.200000\n208.000000\n4650.000000\n2009.000000\n\n\n\n\n\n\n\n\n\nDream_female\n\nDream_female = Adelie[(Adelie['island'] == 'Dream') & (Adelie['sex'] == 'female')]\nDream_female.describe()\n\n\n\n\n\n\n\n\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nyear\n\n\n\n\ncount\n27.000000\n27.000000\n27.000000\n27.000000\n27.000000\n\n\nmean\n36.911111\n17.618519\n187.851852\n3344.444444\n2008.037037\n\n\nstd\n2.089043\n0.897448\n5.510156\n212.056475\n0.854017\n\n\nmin\n32.100000\n15.500000\n178.000000\n2900.000000\n2007.000000\n\n\n25%\n36.000000\n17.050000\n185.000000\n3212.500000\n2007.000000\n\n\n50%\n36.800000\n17.800000\n188.000000\n3400.000000\n2008.000000\n\n\n75%\n37.850000\n18.450000\n191.000000\n3487.500000\n2009.000000\n\n\nmax\n42.200000\n19.300000\n202.000000\n3700.000000\n2009.000000\n\n\n\n\n\n\n\n\n\nTorgersen_male\n\nTorgersen_male = Adelie[(Adelie['island'] == 'Torgersen') & (Adelie['sex'] == 'male')]\nTorgersen_male.describe()\n\n\n\n\n\n\n\n\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nyear\n\n\n\n\ncount\n23.000000\n23.000000\n23.000000\n23.000000\n23.000000\n\n\nmean\n40.586957\n19.391304\n194.913043\n4034.782609\n2008.043478\n\n\nstd\n3.027496\n1.082469\n5.915412\n372.471714\n0.824525\n\n\nmin\n34.600000\n17.600000\n181.000000\n3325.000000\n2007.000000\n\n\n25%\n38.850000\n18.550000\n192.000000\n3787.500000\n2007.000000\n\n\n50%\n41.100000\n19.200000\n195.000000\n4000.000000\n2008.000000\n\n\n75%\n42.650000\n20.150000\n198.000000\n4275.000000\n2009.000000\n\n\nmax\n46.000000\n21.500000\n210.000000\n4700.000000\n2009.000000\n\n\n\n\n\n\n\n\n\nTorgersen_female\n\nTorgersen_female = Adelie[(Adelie['island'] == 'Torgersen') & (Adelie['sex'] == 'female')]\nTorgersen_female.describe()\n\n\n\n\n\n\n\n\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nyear\n\n\n\n\ncount\n24.000000\n24.000000\n24.000000\n24.000000\n24.000000\n\n\nmean\n37.554167\n17.550000\n188.291667\n3395.833333\n2008.000000\n\n\nstd\n2.207887\n0.879723\n4.638958\n259.144356\n0.834058\n\n\nmin\n33.500000\n15.900000\n176.000000\n2900.000000\n2007.000000\n\n\n25%\n35.850000\n17.000000\n186.000000\n3200.000000\n2007.000000\n\n\n50%\n37.600000\n17.450000\n189.000000\n3400.000000\n2008.000000\n\n\n75%\n39.125000\n17.925000\n191.000000\n3606.250000\n2009.000000\n\n\nmax\n41.100000\n19.300000\n196.000000\n3800.000000\n2009.000000\n\n\n\n\n\n\n\n\n\n종류 별 최대값 개체 및 값\n\n\n\n데이터 종류\n개체\n값\n\n\n\n\nbill_length\nbiscoe_male\n40.590909\n\n\nbill_depth\nTorgersen_male\n19.391304\n\n\nflipper_length\nTorgersen_male\n194.913043\n\n\nbody_mass\nbiscoe_male\n4050.000000"
+  },
+  {
+    "objectID": "posts/penguins/index.html#gentoo",
+    "href": "posts/penguins/index.html#gentoo",
+    "title": "팔머펭귄 데이터 분석",
+    "section": "2. Gentoo",
+    "text": "2. Gentoo\n\nGentoo의 서식지\n\nGentoo = penguins[penguins['species'] == 'Gentoo']\n\nset(Gentoo['island'])\n\n{'Biscoe'}\n\n\n\n\nGentoo의 성별, 서식지별 분류\n\n\nBiscoe_male\n\nGentoo_male = Gentoo[Gentoo['sex'] == 'male']\nGentoo_male.describe()\n\n\n\n\n\n\n\n\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nyear\n\n\n\n\ncount\n61.000000\n61.000000\n61.000000\n61.000000\n61.000000\n\n\nmean\n49.473770\n15.718033\n221.540984\n5484.836066\n2008.065574\n\n\nstd\n2.720594\n0.741060\n5.673252\n313.158596\n0.793071\n\n\nmin\n44.400000\n14.100000\n208.000000\n4750.000000\n2007.000000\n\n\n25%\n48.100000\n15.200000\n218.000000\n5300.000000\n2007.000000\n\n\n50%\n49.500000\n15.700000\n221.000000\n5500.000000\n2008.000000\n\n\n75%\n50.500000\n16.100000\n225.000000\n5700.000000\n2009.000000\n\n\nmax\n59.600000\n17.300000\n231.000000\n6300.000000\n2009.000000\n\n\n\n\n\n\n\n\n\nBiscoe_female\n\nGentoo_female = Gentoo[Gentoo['sex'] == 'female']\nGentoo_female.describe()\n\n\n\n\n\n\n\n\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nyear\n\n\n\n\ncount\n58.000000\n58.000000\n58.000000\n58.000000\n58.000000\n\n\nmean\n45.563793\n14.237931\n212.706897\n4679.741379\n2008.068966\n\n\nstd\n2.051247\n0.540249\n3.897856\n281.578294\n0.791669\n\n\nmin\n40.900000\n13.100000\n203.000000\n3950.000000\n2007.000000\n\n\n25%\n43.850000\n13.800000\n210.000000\n4462.500000\n2007.000000\n\n\n50%\n45.500000\n14.250000\n212.000000\n4700.000000\n2008.000000\n\n\n75%\n46.875000\n14.600000\n215.000000\n4875.000000\n2009.000000\n\n\nmax\n50.500000\n15.500000\n222.000000\n5200.000000\n2009.000000\n\n\n\n\n\n\n\n\n\n종류 별 최대값 개체 및 값\n\n\n\n데이터 종류\n개체\n값\n\n\n\n\nbill_length\nmale\n49.473770\n\n\nbill_depth\nmale\n15.718033\n\n\nflipper_length\nmale\n221.540984\n\n\nbody_mass\nmale\n5484.836066"
+  },
+  {
+    "objectID": "posts/penguins/index.html#chinstrap",
+    "href": "posts/penguins/index.html#chinstrap",
+    "title": "팔머펭귄 데이터 분석",
+    "section": "3. Chinstrap",
+    "text": "3. Chinstrap\n\nChinstrap의 서식지\n\nChinstrap = penguins[penguins['species'] == 'Chinstrap']\n\nset(Chinstrap['island'])\n\n{'Dream'}\n\n\n\n\nChinstrap의 성별, 서식지별 분류\n\n\nDream_male\n\nChinstrap_male = Chinstrap[Chinstrap['sex'] == 'male']\nChinstrap_male.describe()\n\n\n\n\n\n\n\n\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nyear\n\n\n\n\ncount\n34.000000\n34.000000\n34.000000\n34.000000\n34.000000\n\n\nmean\n51.094118\n19.252941\n199.911765\n3938.970588\n2007.970588\n\n\nstd\n1.564558\n0.761273\n5.976558\n362.137550\n0.869876\n\n\nmin\n48.500000\n17.500000\n187.000000\n3250.000000\n2007.000000\n\n\n25%\n50.050000\n18.800000\n196.000000\n3731.250000\n2007.000000\n\n\n50%\n50.950000\n19.300000\n200.500000\n3950.000000\n2008.000000\n\n\n75%\n51.975000\n19.800000\n203.000000\n4100.000000\n2009.000000\n\n\nmax\n55.800000\n20.800000\n212.000000\n4800.000000\n2009.000000\n\n\n\n\n\n\n\n\n\nDream_female\n\nChinstrap_female = Chinstrap[Chinstrap['sex'] == 'female']\nChinstrap_female.describe()\n\n\n\n\n\n\n\n\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nyear\n\n\n\n\ncount\n34.000000\n34.000000\n34.000000\n34.000000\n34.000000\n\n\nmean\n46.573529\n17.588235\n191.735294\n3527.205882\n2007.970588\n\n\nstd\n3.108669\n0.781128\n5.754096\n285.333912\n0.869876\n\n\nmin\n40.900000\n16.400000\n178.000000\n2700.000000\n2007.000000\n\n\n25%\n45.425000\n17.000000\n187.250000\n3362.500000\n2007.000000\n\n\n50%\n46.300000\n17.650000\n192.000000\n3550.000000\n2008.000000\n\n\n75%\n47.375000\n18.050000\n195.750000\n3693.750000\n2009.000000\n\n\nmax\n58.000000\n19.400000\n202.000000\n4150.000000\n2009.000000\n\n\n\n\n\n\n\n\n\n종류 별 최대값 개체 및 값\n\n\n\n데이터 종류\n개체\n값\n\n\n\n\nbill_length\nmale\n51.094118\n\n\nbill_depth\nmale\n19.252941\n\n\nflipper_length\nmale\n199.911765\n\n\nbody_mass\nmale\n3938.970588"
+  },
+  {
+    "objectID": "posts/penguins/index.html#adelie의-서식지별-최대-평균-비교",
+    "href": "posts/penguins/index.html#adelie의-서식지별-최대-평균-비교",
+    "title": "팔머펭귄 데이터 분석",
+    "section": "Adelie의 서식지별 최대 평균 비교",
+    "text": "Adelie의 서식지별 최대 평균 비교\n\ncomp = pd.DataFrame({\n    'bill_length' : ['biscoe', 'Torgersen', 'Dream'],\n    'bill_depth' : ['Torgersen', 'biscoe', 'Dream'],\n    'flipper_length' : ['Torgersen', 'Dream', 'biscoe'],\n    'body_mass' : ['biscoe', 'Dream', 'Torgersen'],\n    }, index = ['first', 'second', 'third'])\n\ncomp\n\n\n\n\n\n\n\n\nbill_length\nbill_depth\nflipper_length\nbody_mass\n\n\n\n\nfirst\nbiscoe\nTorgersen\nTorgersen\nbiscoe\n\n\nsecond\nTorgersen\nbiscoe\nDream\nDream\n\n\nthird\nDream\nDream\nbiscoe\nTorgersen"
+  },
+  {
+    "objectID": "posts/penguins/index.html#게체별-최대-평균-비교",
+    "href": "posts/penguins/index.html#게체별-최대-평균-비교",
+    "title": "팔머펭귄 데이터 분석",
+    "section": "게체별 최대 평균 비교",
+    "text": "게체별 최대 평균 비교\n\ncomp = pd.DataFrame({\n    'bill_length' : ['Chinstrap', 'Adelie', 'Gentoo'],\n    'bill_depth' : ['Adelie', 'Chinstrap', 'Gentoo'],\n    'flipper_length' : ['Chinstrap', 'Gentoo', 'Adelie'],\n    'body_mass' : ['Chinstrap', 'Adelie', 'Gentoo'],\n    }, index = ['first', 'second', 'third'])\n\ncomp\n\n\n\n\n\n\n\n\nbill_length\nbill_depth\nflipper_length\nbody_mass\n\n\n\n\nfirst\nChinstrap\nAdelie\nChinstrap\nChinstrap\n\n\nsecond\nAdelie\nChinstrap\nGentoo\nAdelie\n\n\nthird\nGentoo\nGentoo\nAdelie\nGentoo"
+  },
+  {
+    "objectID": "posts/penguins/index.html#결론",
+    "href": "posts/penguins/index.html#결론",
+    "title": "팔머펭귄 데이터 분석",
+    "section": "결론",
+    "text": "결론\n\n서식지 분석\nAdelie는 Biscoe, Dream, Torgersen 3 종류의 섬에 서식하지만, Gentoo는 Biscoe, Chinstrap는 Dream 에서만 서식한다.\n\n\nAdelie의 서식지별 분석\n\n부리 길이는 biscoe이 가장 길고, Dream가 가장 짧다.\n부리 깊이는 Torgersen이 가장 깊고, Dream가 가장 얕다.\n날개 길이는 Torgersen이 가장 길고, biscoe가 가장 짧다.\n무게는 biscoe이 가장 높고, Torgersen가 가장 낮다.\n\n\n\n개체별 데이터 분석\n\n부리 길이는 Chinstrap이 가장 길고, Gentoo가 가장 짧다.\n부리 깊이는 Adelie이 가장 깊고, Gentoo가 가장 얕다.\n날개 길이는 Chinstrap이 가장 길고, Adelie가 가장 짧다.\n무게는 Chinstrap이 가장 높고, Gentoo가 가장 낮다."
+  },
+  {
+    "objectID": "posts/my-first-post/index.html",
+    "href": "posts/my-first-post/index.html",
+    "title": "나의 첫 블로그 포스트",
+    "section": "",
+    "text": "넘파이 패키지를 불러옵시다!\n\nimport numpy as np\n\na = np.array([3, 2, 15])\na\n\narray([ 3,  2, 15])\n\n\n\n\n\n판다스 패키지를 불러옵시다!\n\nimport pandas as pd"
+  },
+  {
+    "objectID": "posts/my-first-post/index.html#파이썬-데이터-분석",
+    "href": "posts/my-first-post/index.html#파이썬-데이터-분석",
+    "title": "나의 첫 블로그 포스트",
+    "section": "",
+    "text": "넘파이 패키지를 불러옵시다!\n\nimport numpy as np\n\na = np.array([3, 2, 15])\na\n\narray([ 3,  2, 15])\n\n\n\n\n\n판다스 패키지를 불러옵시다!\n\nimport pandas as pd"
   }
 ]

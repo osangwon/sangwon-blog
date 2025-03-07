@@ -3,14 +3,12 @@ project:
   output-dir: docs
 
 website:
-  title: "sangwon-blog"
+  title: "LS 빅데이터 스쿨 Qmd 블로그 실습"
   navbar:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/osangwon/sangwon-blog
 format:
   html:
     theme:
